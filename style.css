@@ -2,6 +2,7 @@ body {
     background-color: #d3dad5;
     margin: 0;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .Logo {
@@ -80,8 +81,9 @@ a {
     color: white;
 }
 
-.abschnitt1 button:hover {
-    background-color: rgb(92, 172, 172);
+.jetztSpenden:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(247, 11, 11)
 }
 
 .abfolge {
@@ -115,3 +117,53 @@ a {
     flex-direction: column;
     align-items: center;
 }
+
+.kleiderSpendenReg {
+    background-color:rgb(92, 172, 172);
+    color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 150%;
+    font-size: 18px;
+}
+
+.beschreibung {
+    padding: 0 100 0 100
+}
+
+
+
+.kleidungVerarbeitung {
+    display: flex;
+}
+
+.kleidungHilft {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.wasPassiert {
+    background-color: rgb(92, 172, 172);
+    margin-bottom: 20px;
+    padding: 30px;
+
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+.kasten {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 23%; 
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; 
