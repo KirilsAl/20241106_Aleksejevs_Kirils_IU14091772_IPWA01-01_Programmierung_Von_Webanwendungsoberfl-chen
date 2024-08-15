@@ -118,52 +118,51 @@ a {
     align-items: center;
 }
 
+.kleidungInfo {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Abstand zwischen den Boxen */
+    margin-bottom: 50px;
+}
+
+.kleidungVerarbeitung, .wasPassiert {
+    flex: 1;
+}
+
+.box {
+    height: 300px; /* gleiche Höhe für beide Boxen */
+    padding: 20px;
+    border: 3px solid rgb(92, 172, 172);
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Zentrierung des Inhalts */
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+
+/* Optionale Anpassungen für bessere Darstellung */
+.kleidungInfo .box h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.kleidungInfo .box p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
 .kleiderSpendenReg {
     background-color:rgb(92, 172, 172);
     color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     line-height: 150%;
     font-size: 18px;
+
+    padding:50px;
 }
-
-.beschreibung {
-    padding: 0 100 0 100
-}
-
-
-
-.kleidungVerarbeitung {
-    display: flex;
-}
-
-.kleidungHilft {
-    padding: 30px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.wasPassiert {
-    background-color: rgb(92, 172, 172);
-    margin-bottom: 20px;
-    padding: 30px;
-
-    color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-
-.kasten {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 23%; 
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; 
