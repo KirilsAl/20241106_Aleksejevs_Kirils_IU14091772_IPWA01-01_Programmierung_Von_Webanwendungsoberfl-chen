@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,28 +9,22 @@
 </head>
 <body>
     <header>
-        <img class = "Logo" src="pictures/LogoFallstudie2.png" alt="">
+        <img class="Logo" src="pictures/LogoFallstudie2.png" alt="">
         
-        <div class = "navbar">
-            <a href="index.html" class = "navItems">Home</a>
-            <a href="spenden.html" class = "navItems">Spenden</a>
+        <div class="navbar">
+            <a href="index.html" class="navItems">Home</a>
+            <a href="spenden.html" class="navItems">Spenden</a>
         </div>
     </header>
 
-    <div class = "abschnitt1">
+    <div class="abschnitt1">
         <h1>Kleider Spenden</h1>
-    </div>
-
-    <div>
-        <form action="">
-            <label for=""></label>
-        </form>
     </div>
 
     <main>
         <div class="formular">
             <h1>Kleiderspenden-Registrierung</h1>
-            <form action="#" method="post">
+            <form onsubmit="saveData(event)">
                 <div class="form-group">
                     <label for="kleidungsart">Art der Kleidung:</label>
                     <select name="kleidungsart" id="kleidungsart">
@@ -44,15 +39,54 @@
                 <div class="form-group">
                     <label for="krisengebiet">Aktuelles Krisengebiet:</label>
                     <select name="krisengebiet" id="krisengebiet">
-                        <option value="gebiet1">Afghanistan</option>
-                        <option value="gebiet2">Ukraine</option>
-                        <option value="gebiet3">Uganda</option>
+                        <option value="afghanistan">Afghanistan</option>
+                        <option value="ukraine">Ukraine</option>
+                        <option value="uganda">Uganda</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="abholadresse">Abholadresse:</label>
-                    <input type="text" name="abholadresse" id="abholadresse" placeholder="Deine Abholadresse eingeben">
+                    <label for="bringenderVersenden">Möchten Sie die Kleidung an eine Geschäftsstelle bringen oder abholen lassen?</label>
+                    <select name="bringenderVersenden" id="bringenderVersenden">
+                        <option value="abholen">Abholen lassen</option>
+                        <option value="bringen">An eine Geschäftsstelle bringen</option>
+                    </select>
+                </div>
+
+                <!-- Felder für Abholen lassen -->
+                <div id="abholAdresseContainer" style="display:none;">
+                    <div class="form-group">
+                        <label for="abholadresse">Abholadresse:</label>
+                        <input type="text" id="abholadresse" name="abholadresse" placeholder="Ihre Abholadresse">
+                    </div>
+                    <div class="form-group">
+                        <label for="plz_abholen">Postleitzahl:</label>
+                        <input type="text" id="plz_abholen" name="plz_abholen" placeholder="Ihre Postleitzahl">
+                    </div>
+                </div>
+
+                <!-- Felder für an Geschäftsstelle bringen -->
+                <div id="geschaeftsstelleContainer" style="display:none;">
+                    <div class="form-group">
+                        <label for="plz_bringen">PLZ:</label>
+                        <input type="number" id="plz_bringen" name="plz_bringen" placeholder="Geben Sie Ihre PLZ ein">
+                        <button type="button" onclick="findLocation()">Geschäftsstelle finden</button>
+                    </div>
+
+                    <div class="standorte">
+                        <div id="location_frankfurt" style="display:none;">
+                            <p>60318 Frankfurt<br>Bachstraße 15</p>
+                        </div>
+                        <div id="location_stuttgart" style="display:none;">
+                            <p>70176 Stuttgart<br>Königstraße 44</p>
+                        </div>
+                        <div id="location_badenbaden" style="display:none;">
+                            <p>76530 Baden-Baden<br>Sophienstraße 105</p>
+                        </div>
+                        <div id="no_location" style="display:none;">
+                            <p>Keine Geschäftsstelle gefunden</p>
+                        </div>
+                    </div>
                 </div>
 
                 <input type="submit" value="Registrierung abschicken" class="form-submit">
@@ -63,11 +97,11 @@
     <footer>
         <div class="aGBs">
             <h3>AGBs</h3>
-            <a href="rechtliches/impressum.html">impressum</a>
+            <a href="rechtliches/impressum.html">Impressum</a>
             <a href="rechtliches/datenschutz.html">Datenschutz</a>
         </div>
         
-        <div class = "kontakt">
+        <div class="kontakt">
             <h3>Kontakt</h3>
             <p>Ansprechperson: Kirils Aleksejevs</p>
             <p>E-Mail Adresse: kirils.aleksejevs@iu-study.org</p>
@@ -75,5 +109,6 @@
         </div>
     </footer>
 
+    <script src="index.js"></script>
 </body>
 </html>

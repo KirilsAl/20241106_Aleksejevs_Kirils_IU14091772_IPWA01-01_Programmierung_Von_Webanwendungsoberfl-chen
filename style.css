@@ -47,6 +47,12 @@ a {
     width: 100%;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .abschnitt1 {
     background-image: url(pictures/banner2.png);
     width: 100%;
