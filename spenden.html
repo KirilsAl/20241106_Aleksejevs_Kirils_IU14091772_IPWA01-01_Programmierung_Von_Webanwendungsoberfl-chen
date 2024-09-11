@@ -29,7 +29,7 @@
     <main>
         <div class="formular">
             <h1>Kleiderspenden-Registrierung</h1>
-            <form action="#" method="post">
+            <form onsubmit="saveData(event)">
                 <div class="form-group">
                     <label for="kleidungsart">Art der Kleidung:</label>
                     <select name="kleidungsart" id="kleidungsart">
@@ -44,18 +44,45 @@
                 <div class="form-group">
                     <label for="krisengebiet">Aktuelles Krisengebiet:</label>
                     <select name="krisengebiet" id="krisengebiet">
-                        <option value="gebiet1">Afghanistan</option>
-                        <option value="gebiet2">Ukraine</option>
-                        <option value="gebiet3">Uganda</option>
+                        <option value="afghanistan">Afghanistan</option>
+                        <option value="ukraine">Ukraine</option>
+                        <option value="uganda">Uganda</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="abholadresse">Abholadresse:</label>
-                    <input type="text" name="abholadresse" id="abholadresse" placeholder="Deine Abholadresse eingeben">
+                    <label for="bringenOderVersenden">Möchten Sie die Kleidung an eine Geschäftsstelle bringen oder abholen lassen?</label>
+                    <select name="bringenOderVersenden" id="bringenOderVersenden">
+                        <option value="abholen">Abholen lassen</option>
+                        <option value="bringen">An eine Geschäftsstelle bringen</option>
+                    </select>
                 </div>
 
-                <input type="submit" value="Registrierung abschicken" class="form-submit">
+                <!-- Felder für Abholen lassen -->
+                <div id="abholAdresseContainer" style="display:none;">
+                    <div class="form-group">
+                        <label for="abholadresse">Abholadresse:</label>
+                        <input type="text" id="abholadresse" name="abholadresse" placeholder="Ihre Abholadresse">
+                    </div>
+                    <div class="form-group">
+                        <label for="plz_abholen">Postleitzahl:</label>
+                        <input type="text" id="plz_abholen" name="plz_abholen" placeholder="Ihre Postleitzahl">
+                    </div>
+                </div>
+
+                <!-- Felder für an Geschäftsstelle bringen -->
+                <div id="geschaeftsstelleContainer" style="display:none;">
+                    <div class="form-group">
+                        <label for="plz_bringen">PLZ:</label>
+                        <input type="number" id="plz_bringen" name="plz_bringen" placeholder="Geben Sie Ihre PLZ ein">
+                        <button type="button" onclick="findLocation()">Geschäftsstelle finden</button>
+                    </div>
+
+                    <div id="standorte">
+                    </div>
+                </div>
+                    <a class="form-submit" onclick="submitForm(event)">Registrierung abschicken</a>
+                
             </form>
         </div>
     </main>
@@ -75,5 +102,6 @@
         </div>
     </footer>
 
+    <script src="index.js"></script>
 </body>
 </html>

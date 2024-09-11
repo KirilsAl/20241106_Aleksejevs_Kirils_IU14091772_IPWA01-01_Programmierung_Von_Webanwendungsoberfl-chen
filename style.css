@@ -182,6 +182,7 @@ footer {
     flex-direction: column;
 }
 
+
 /*IMPRESSUM*/
 .impressumSeite  {
     padding: 10%;
@@ -192,6 +193,12 @@ footer {
 .datenschutzSeite {
     padding: 10%;
     margin-right: 30%;
+}
+
+/*SPENDEN WAHL SEITE*/
+.knopfAuswahl {
+    display: flex;
+    flex-direction: row;
 }
 
 /*SPENDEN SEITE*/
