@@ -15,6 +15,7 @@ header {
     align-items: center;
     justify-content: space-between;
     max-height: 100px;
+    padding: 10px;
 }
 
 a {
@@ -31,8 +32,6 @@ a {
 .navItems {
     margin-left: 10px;
     margin-right: 10px;
-
-
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
     font-weight: bold;
@@ -40,7 +39,7 @@ a {
 
 .navItems:hover {
     background-color: white;
-    color: black
+    color: black;
 } 
 
 .banner {
@@ -51,12 +50,10 @@ a {
     background-image: url(pictures/banner2.png);
     width: 100%;
     height: 400px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     margin-bottom: 50px;
 }
 
@@ -64,9 +61,10 @@ a {
     color: white;
     font-size: 4em;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    -webkit-text-stroke: 3px  hwb(180 36% 33% / 0.466);
+    -webkit-text-stroke: 3px hwb(180 36% 33% / 0.466);
     background-color: hsla(0, 0%, 100%, 0.363);
     border-radius: 75px;
+    text-align: center;
 }
 
 .jetztSpenden {
@@ -83,13 +81,16 @@ a {
 
 .jetztSpenden:hover {
     background-color: rgb(255, 255, 255);
-    color: rgb(247, 11, 11)
+    color: rgb(247, 11, 11);
 }
 
 .abfolge {
     display: flex;
     align-items: center;
-    justify-content: space-around
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
 }
 
 .kreis {
@@ -98,7 +99,6 @@ a {
     border-radius: 50%;
     width: 150px;
     height: 150px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -106,8 +106,8 @@ a {
 
 .truck {
     width: 120px;
-    
 }
+
 .charity {
     width: 120px;
 }
@@ -121,8 +121,10 @@ a {
 .kleidungInfo {
     display: flex;
     justify-content: space-between;
-    gap: 20px; 
+    gap: 20px;
     margin-bottom: 50px;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .kleidungVerarbeitung, .wasPassiert {
@@ -154,34 +156,35 @@ a {
 }
 
 .kleiderSpendenReg {
-    background-color:rgb(92, 172, 172);
+    background-color: rgb(92, 172, 172);
     color: white;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     line-height: 150%;
     font-size: 18px;
-
-    padding:50px;
+    padding: 50px;
 }
 
 footer {
     display: flex;
     justify-content: space-around;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .aGBs {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .kontakt {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
-
 
 /*IMPRESSUM*/
 .impressumSeite  {
@@ -199,6 +202,9 @@ footer {
 .knopfAuswahl {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 /*SPENDEN SEITE*/
@@ -208,7 +214,7 @@ footer {
     padding: 50px;
     border-radius: 15px;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -260,4 +266,49 @@ footer {
 .form-submit:hover {
     background-color: white;
     color: rgb(247, 11, 11);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .navbar {
+        margin: 0;
+    }
+
+    .abschnitt1 {
+        height: auto;
+        padding: 20px;
+    }
+
+    .abschnitt1 h1 {
+        font-size: 2.5em;
+    }
+
+    .jetztSpenden {
+        width: 150px;
+        height: 60px;
+    }
+
+    .kleidungInfo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aGBs, .kontakt {
+        align-items: center;
+    }
+
+    .knopfAuswahl {
+        flex-direction: column;
+    }
 }
