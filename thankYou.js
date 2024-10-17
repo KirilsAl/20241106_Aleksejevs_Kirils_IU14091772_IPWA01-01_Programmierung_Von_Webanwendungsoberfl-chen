@@ -10,7 +10,7 @@ function onPageLoad() {
     console.log(list);
 
     if (bringenOderVersenden === "bringen"){
-        document.getElementById("thankYou_form-group").innerHTML = `<h1 style=text-align:center>Vielen Dank...</h1> </br> <h2 class="formular">Bitte bringen Sie Ihre kleidung an die folgende Adresse: <br> ${list}.</h2>`
+        document.getElementById("thankYou_form-group").innerHTML = `<h1 style="text-align:center">Vielen Dank...</h1><h2 class="formular">Bitte bringen Sie Ihre Kleidung an die folgende Adresse: <br> ${list}.</h2>`;
     }
     else if (bringenOderVersenden === "abholen") {
         document.getElementById("thankYou_form-group").innerHTML = `<h2 class="formular">Der Fahrer kommt in den nächste 2 Stunden an der folgenden Adresse: <br> ${abholadresse}. </h2>`
